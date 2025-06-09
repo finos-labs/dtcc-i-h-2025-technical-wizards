@@ -1,0 +1,116 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 1430px;
+  background-color: #f7f8fa;
+  padding: 16px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bot-message,
+.user-message {
+  padding: 12px 16px;
+  border-radius: 16px;
+  max-width: 70%;
+  font-size: 1rem;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #e3eaf3;
+  color: #333;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #d9eafc;
+  color: #1a1a1a;
+}
+
+/* Input Area */
+.input-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 800px;
+  max-width: 90%;
+  border-top: 1px solid #ccc;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+/* Input Wrapper for icon */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-grow: 1;
+}
+
+.input-wrapper::before {
+  content: "💬";
+  position: absolute;
+  left: 10px;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.input-box input {
+  flex-grow: 1;
+  padding: 10px 10px 10px 36px; /* leave space for icon */
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fefefe;
+  transition: border 0.2s;
+}
+
+.input-box input:focus {
+  border-color: #007bff;
+}
+
+/* Send Button */
+.input-box button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.input-box button:hover {
+  background-color: #005fcc;
+}
+
+.input-box button::before {
+  content: "➤";
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: relative;
+  left: 1px; /* Slightly rightward */
+  top: -1px;
+}

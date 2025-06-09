@@ -1,0 +1,15 @@
+<div class="chat-container">
+  <div class="messages" #scrollContainer>
+    <div *ngFor="let msg of messages; let i = index"
+         [ngClass]="{'user-message': i % 2 === 1, 'bot-message': i % 2 === 0}">
+      {{ msg }}
+    </div>
+  </div>
+
+  <div class="input-box">
+    <input [(ngModel)]="newMessage"
+           (keyup.enter)="sendMessage()"
+           placeholder="Type your message..." />
+    <button (click)="sendMessage()"></button>
+  </div>
+</div>

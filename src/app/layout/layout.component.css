@@ -1,0 +1,25 @@
+.main-content {
+  margin-left: 240px; /* Equal to sidebar width */
+  padding: 1rem;
+  background-color: #f3f3f3;
+  min-height: 100vh;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+app-sidebar {
+  width: 240px;
+}
+
+app-chat-interface {
+  width: 400px; /* or any fixed width */
+}
+
+.flex-1 {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
