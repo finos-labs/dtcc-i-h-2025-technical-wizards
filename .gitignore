@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
@@ -40,3 +41,35 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+=======
+# .gitignore
+#
+#   This file specifies intentionally untracked files that Git should ignore.
+#
+#   Alternatively, see the collection of .gitignore templates
+#       https://github.com/github/gitignore
+
+# macOS-specific
+.DS_Store
+
+# Build directories
+dist
+site
+html
+
+# Virtual environments
+venv
+
+# Miscellaneous
+.idea
+.vscode
+
+# Python directories
+__pycache__
+*.pyc
+*.tmp
+.pytest_cache
+
+# MSFT Office
+~$*.*
+>>>>>>> 4188eb0b075533f4ee1808899990f4a99a7491c9
