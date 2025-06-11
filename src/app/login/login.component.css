@@ -2,10 +2,18 @@
   max-width: 400px;
   margin: 100px auto;
   padding: 32px;
-  background-color: #f0f4f8;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+.login-wrapper {
+  
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #f2f4f8, #dce3f0);
+  padding: 20px;
 }
 
 .login-container h2 {

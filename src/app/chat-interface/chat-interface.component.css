@@ -1,116 +1,88 @@
+/* Global Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* prevent scroll */
+}
+
+/* Main Chat Container */
 .chat-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
-  width: 1430px;
+  width: 86vw;
   background-color: #f7f8fa;
-  padding: 16px;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+/* Messages Area */
 .messages {
-  flex-grow: 1;
+  flex: 1;
   overflow-y: auto;
-  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  padding: 20px;
 }
 
-.bot-message,
+/* Message Bubbles */
 .user-message {
+  align-self: flex-end;
+  background-color: #d9eaff;
   padding: 12px 16px;
-  border-radius: 16px;
+  border-radius: 12px;
   max-width: 70%;
-  font-size: 1rem;
-  word-wrap: break-word;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .bot-message {
   align-self: flex-start;
-  background-color: #e3eaf3;
-  color: #333;
+  background-color: #e2e2e2;
+  padding: 12px 16px;
+  border-radius: 12px;
+  max-width: 70%;
+}
+.bot-message ul, .bot-message ol {
+  padding-left: 20px;
+  margin: 0;
+  list-style-position: inside;
 }
 
-.user-message {
-  align-self: flex-end;
-  background-color: #d9eafc;
-  color: #1a1a1a;
-}
-
-/* Input Area */
+/* Input Box */
 .input-box {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 800px;
-  max-width: 90%;
-  border-top: 1px solid #ccc;
-  padding: 12px 16px;
-  background-color: #ffffff;
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
+  justify-content: center;
+  padding: 30px 40px; /* smaller padding to keep it inside screen */
 }
 
-/* Input Wrapper for icon */
-.input-wrapper {
+.input-wrapper-row {
   display: flex;
-  align-items: center;
-  position: relative;
-  flex-grow: 1;
+  width: 100%;
+  max-width: 800px; /* increased from 600px */
+  gap: 10px;
 }
 
-.input-wrapper::before {
-  content: "💬";
-  position: absolute;
-  left: 10px;
-  font-size: 1.2rem;
-  color: #888;
-}
-
-.input-box input {
+input {
   flex-grow: 1;
-  padding: 10px 10px 10px 36px; /* leave space for icon */
-  border: 1px solid #bbb;
+  padding: 14px 18px; /* increased padding for better height */
+  border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
-  outline: none;
-  background-color: #fefefe;
-  transition: border 0.2s;
+  font-size: 1.1rem; /* slightly larger text */
 }
 
-.input-box input:focus {
-  border-color: #007bff;
-}
-
-/* Send Button */
-.input-box button {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+/* Button Styling */
+button {
+  padding: 14px 20px; /* match input padding */
+  font-size: 1.1rem;
   border: none;
+  border-radius: 8px;
   background-color: #007bff;
   color: white;
+  font-size: 1rem;
   cursor: pointer;
-  position: relative;
-  transition: background-color 0.3s ease;
 }
 
-.input-box button:hover {
-  background-color: #005fcc;
-}
-
-.input-box button::before {
-  content: "➤";
-  font-weight: bold;
-  font-size: 1.2rem;
-  position: relative;
-  left: 1px; /* Slightly rightward */
-  top: -1px;
+button:hover {
+  background-color: #0056b3;
 }
