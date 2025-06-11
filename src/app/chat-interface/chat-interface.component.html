@@ -1,15 +1,31 @@
 <div class="chat-container">
-  <div class="messages" #scrollContainer>
-    <div *ngFor="let msg of messages; let i = index"
-         [ngClass]="{'user-message': i % 2 === 1, 'bot-message': i % 2 === 0}">
-      {{ msg }}
+  <div class="messages">
+    <div *ngFor="let msg of messages" [ngClass]="{ 'user-message': msg.sender === 'user', 'bot-message': msg.sender === 'bot' }">
+      <!-- User message -->
+      <ng-container *ngIf="msg.sender === 'user'">
+        {{ msg.text }}
+      </ng-container>
+
+      <!-- Bot message with bullet points -->
+      <ng-container *ngIf="msg.sender === 'bot'">
+  <div *ngIf="msg.bulletPoints?.length; else singleText">
+    <div *ngFor="let bullet of msg.bulletPoints" style="margin-bottom: 4px;">
+      {{ bullet }}
     </div>
   </div>
+  <ng-template #singleText>
+    <div *ngFor="let line of msg.text.split('\n')" style="margin-bottom: 4px;">
+      {{ line }}
+    </div>
+  </ng-template>
+</ng-container>
 
-  <div class="input-box">
-    <input [(ngModel)]="newMessage"
-           (keyup.enter)="sendMessage()"
-           placeholder="Type your message..." />
-    <button (click)="sendMessage()"></button>
+    </div>
   </div>
+<div class="input-box">
+  <div class="input-wrapper-row">
+    <input [(ngModel)]="userPrompt" (keyup.enter)="sendPrompt()" placeholder="Ask something..." />
+    <button (click)="sendPrompt()" [disabled]="loading || !userPrompt.trim()">➤</button>
+  </div>
+</div>
 </div>

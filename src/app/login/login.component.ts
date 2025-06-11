@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-login',
@@ -13,12 +14,17 @@ export class LoginComponent {
   username = '';
   password = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private auth: Auth) {}
 
   login() {
-    // Simple login logic (add real auth later)
-    if (this.username && this.password) {
-      this.router.navigate(['/layout']);
-    }
+    signInWithEmailAndPassword(this.auth, this.username, this.password)
+      .then(() => {
+        console.log('Login successful');
+        this.router.navigate(['/layout']);
+      })
+      .catch((error) => {
+        console.error('Login error:', error);
+        alert(error.message);
+      });
   }
 }

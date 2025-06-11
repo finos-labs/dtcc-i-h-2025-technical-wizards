@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feature
 # FinanceChatbot
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
@@ -58,6 +61,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<<<<<<< HEAD
 =======
 ![badge-labs](https://user-images.githubusercontent.com/327285/230928932-7c75f8ed-e57b-41db-9fb7-a292a13a1e58.svg)
 
@@ -118,3 +122,5 @@ SPDX-License-Identifier: [Apache-2.0](https://spdx.org/licenses/Apache-2.0)
 
 
 >>>>>>> 4188eb0b075533f4ee1808899990f4a99a7491c9
+=======
+>>>>>>> feature

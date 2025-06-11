@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
@@ -41,6 +41,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+<<<<<<< HEAD
 =======
 # .gitignore
 #
@@ -73,3 +74,5 @@ __pycache__
 # MSFT Office
 ~$*.*
 >>>>>>> 4188eb0b075533f4ee1808899990f4a99a7491c9
+=======
+>>>>>>> feature
